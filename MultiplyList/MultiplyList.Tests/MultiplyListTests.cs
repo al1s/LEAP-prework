@@ -40,5 +40,38 @@ namespace MultiplyList.Tests
             // assert
             Assert.Equal(expectedValue, result);
         }
+        [Fact]
+        public void RecursiveFunction_GivenAListOfNumbers_ReturnsProductOfNumbers()
+        {
+            // arrange
+            List<int> list = new List<int> { 1, 2, 3, 4 };
+            int expectedValue = list.Aggregate(1, (product, elm) => product * elm);
+            // act
+            int result = App.Program.MultiplyListRecur(list);
+            // assert
+            Assert.Equal(expectedValue, result);
+        }
+        [Fact]
+        public void RecursiveFunction_GivenAListOfNumbersWithNegativeValue_ReturnsProductOfNumbers()
+        {
+            // arrange
+            List<int> list = new List<int> { -1, 2 };
+            int expectedValue = list.Aggregate(1, (product, elm) => product * elm);
+            // act
+            int result = App.Program.MultiplyListRecur(list);
+            // assert
+            Assert.Equal(expectedValue, result);
+        }
+        [Fact]
+        public void RecursiveFunction_GivenAListOfNumbersWithZero_ReturnsZero()
+        {
+            // arrange
+            List<int> list = new List<int> { 1, 2, 3, 0 };
+            int expectedValue = 0;
+            // act
+            int result = App.Program.MultiplyListRecur(list);
+            // assert
+            Assert.Equal(expectedValue, result);
+        }
     }
 }
