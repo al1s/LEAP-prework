@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace MultiplyList.App
 {
-    class Program
+    public class Program
     {
         /// <summary>
-        /// Get the product of all numbers in the list
+        /// Get the product of all numbers in the list (iteratively)
         /// </summary>
         /// <param name="numbers">List of numbers</param>
         /// <returns>Product of numbers</returns>
-        public static int MultiplyList(List<int> numbers)
+        public static int MultiplyListIter(List<int> numbers)
         {
             int result = 1;
             foreach (int number in numbers)
