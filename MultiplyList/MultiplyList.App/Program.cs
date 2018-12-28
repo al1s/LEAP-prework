@@ -19,6 +19,18 @@ namespace MultiplyList.App
             }
             return result;
         }
+        /// <summary>
+        /// Get the product of all numbers in the list (divide-and-conquer)
+        /// </summary>
+        /// <param name="numbers">List of numbers</param>
+        /// <returns>Product of numbers</returns>
+        public static int MultiplyListRecur(List<int> numbers)
+        {
+            if (numbers.Count == 1)
+                return numbers[0];
+            return numbers[0] * MultiplyListRecur(numbers.GetRange(1, numbers.Count - 1));
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
